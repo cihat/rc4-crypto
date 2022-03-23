@@ -1,8 +1,8 @@
-const encrypt = (str, key = "rc4@123") => {
+const encrypt = (str, key) => {
   return str && key ? rc4(str, key) : null
 }
 
-const decrypt = (str, key = "rc4@123") => {
+const decrypt = (str, key) => {
   return str && key ? rc4(str, key) : null
 }
 
@@ -18,8 +18,6 @@ const rc4 = (str, key) => {
   }
   for (let i = 0; i < 256; i++) {
     j = (j + s[i] + key.charCodeAt(i % key.length)) % 256
-    console.log("ASCII Code: ", j)
-    console.log("Char: ", String.fromCharCode(j))
     temp = s[i]
     s[i] = s[j]
     s[j] = temp

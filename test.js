@@ -1,4 +1,4 @@
-const { encrypt, decrypt } = require("./index")
+const { encrypt, decrypt } = require("./rc4")
 
 const text = "TestTestTestTestTest"
 const key = "rc4@12345678"
